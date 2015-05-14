@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="ExpenceBook.DailySpending"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="368" Width="540">
+    <Grid  Height="350" Width="525" Background="#367587" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10px 10px 10px 10px">
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,5,0,0" Name="textBlockHeading" Text="Daily Spending:" VerticalAlignment="Top" Width="128"  FontSize="17" FontStretch="ExtraCondensed"/>
+
+        <TextBlock Height="20" HorizontalAlignment="Left" Margin="99,62,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="99,86,0,0" Name="lblExpenceDate" Text="Date of Transaction:" VerticalAlignment="Top" Width="110" />
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="99,118,0,0" Name="lblExpenceFor" Text="Tag:" VerticalAlignment="Top" Width="110" />
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="99,151,0,0" Name="lblAmountSpend" Text="Amount Spend" VerticalAlignment="Top" Width="110" />
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="99,187,0,0" Name="lblSpendBy" Text="Transaction Type:" VerticalAlignment="Top" Width="110"  />
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="99,220,0,0" Name="lblPayee" Text="Payee:" VerticalAlignment="Top" Width="110" />
+  
+        <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,82,0,0" Name="calEnpenceDate">
+            <DatePicker.Resources>
+                <Style TargetType="DatePickerTextBox">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                    <Setter Property="Text" Value=" "/>
+                    <Setter Property="Focusable" Value="False"/>
+                    <Setter Property="IsEnabled" Value="False" />
+                    <Setter Property="IsHitTestVisible" Value="False"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <!--<TextBox Height="23" HorizontalAlignment="Left" Margin="215,82,0,0" Name="textBoxExpenceDate" VerticalAlignment="Top" Width="222" />-->
+
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="215,115,0,0" Name="textBoxExpenceFor" VerticalAlignment="Top" Width="194" />
+
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="215,148,0,0" Name="textAmountSpend" VerticalAlignment="Top" Width="194" />
+
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="215,220,0,0" Name="textPayee" VerticalAlignment="Top" Width="194" />
+
+        <ComboBox Margin="215,183,0,0" Name="ComboBox1" HorizontalAlignment="Left"  
+             VerticalAlignment="Top" Width="194" Height="30">
+            <ComboBoxItem Content="Transaction Type" IsSelected="True" />
+            <ComboBoxItem Content="Cash"></ComboBoxItem>
+            <ComboBoxItem Content="Check "></ComboBoxItem>
+            <ComboBoxItem Content="Credit"></ComboBoxItem>
+        </ComboBox>
+        <!--<TextBox Height="23" HorizontalAlignment="Left" Margin="215,169,0,0" Name="textCreditedBy" VerticalAlignment="Top" Width="222" />-->
+
+        <!--For password-->
+
+        <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="215,260,0,0" Name="Submit" VerticalAlignment="Top" Width="70" Click="Submit_Click" />
+
+        <Button Content="Reset" Height="23" HorizontalAlignment="Left" Margin="323,260,0,0" Name="button2" VerticalAlignment="Top" Width="70" Click="Reset_Click" />
+
+    </Grid>
+</UserControl>

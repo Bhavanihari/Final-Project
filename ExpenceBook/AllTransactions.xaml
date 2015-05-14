@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="ExpenceBook.DailyExpenceList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="510.448" Width="1348.881">
+    <Grid Background="#367587"  Margin="0,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="825">
+        <Canvas  Margin="0,0,0,-34" Height="178" VerticalAlignment="Top" HorizontalAlignment="Left" Width="825" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}">
+            <TextBlock Height="23" HorizontalAlignment="Left" Name="textBlock2" Text="Record Id" VerticalAlignment="Top" Width="77" Canvas.Left="141" Canvas.Top="41" />
+            <TextBox Canvas.Left="232" Canvas.Top="39" Height="23" Name="txtRecordId" Width="120"  />
+            <Button Name="removeButton" Canvas.Left="386" Canvas.Top="39" Height="21" Width="69" Click="removeButton_Click">Remove</Button>
+        </Canvas>
+        <ListView Margin="10,110,29,10" Name="lvDailyExpence" ItemsSource="{Binding}" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" Width="25" DisplayMemberBinding="{Binding Path=ExpenceId}" />
+                    <GridViewColumn Header="Expence Date" Width="120" DisplayMemberBinding="{Binding Path=ExpenceDate}" />
+                    <GridViewColumn Header="Expence For" Width="150" DisplayMemberBinding="{Binding Path=ExpenceFor}" />
+                    <GridViewColumn Header="Amount Spend" Width="150"  DisplayMemberBinding="{Binding Path=AmountSpend}" />
+                    <GridViewColumn Header="Spend By" Width="160" DisplayMemberBinding="{Binding Path=SpendBy}"/>
+                    <GridViewColumn Header="Payee" Width="160" DisplayMemberBinding="{Binding Path=Payee}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock  HorizontalAlignment="Left" Margin="848,0,-500,-34" TextWrapping="Wrap"  VerticalAlignment="Top" Width="477" Height="178" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"><InlineUIContainer>
+        		<ComboBox Name="ComboBox" Width="120" Margin="10,20" Height="26">
+                    <ComboBoxItem Content="Transaction Type" IsSelected="True" />
+            <ComboBoxItem Content="Cash"></ComboBoxItem>
+            <ComboBoxItem Content="Check "></ComboBoxItem>
+            <ComboBoxItem Content="Credit"></ComboBoxItem>
+                </ComboBox>
+        	</InlineUIContainer><InlineUIContainer>
+        		<Button Content="Submit" Width="75" Margin="20" Height="26" Click="Button_Click"/>
+        	</InlineUIContainer>
+        <ListView Margin="1" Name="lvDailyExpence1" ItemsSource="{Binding}" Width="460" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Expence Date" Width="110" DisplayMemberBinding="{Binding Path=ExpenceDate}" />
+                    <GridViewColumn Header="Expence For" Width="120" DisplayMemberBinding="{Binding Path=ExpenceFor}" />
+                    <GridViewColumn Header="Amount Spend" Width="110"  DisplayMemberBinding="{Binding Path=AmountSpend}" />
+                    <GridViewColumn Header="Payee" Width="160" DisplayMemberBinding="{Binding Path=Payee}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        </TextBlock>
+
+
+    </Grid>
+</UserControl>
